@@ -1,0 +1,16 @@
+
+/*
+ * GET home page.
+ */
+
+exports.index = function(req, res) {
+  console.log('in index.js');
+  var fs = require('fs');
+  fs.readFile('public/resources/otwist.txt',{encoding:'utf-8'}, function(err, data) {
+    var re = new RegExp('\n', 'g')
+    data = '<p>' + data;
+    data = data.replace(re, '</p><p>');
+    data = data + '<\p>';
+    res.render('index', {title : 'QuickAssist English', 'stuff' : data } );
+  });
+};

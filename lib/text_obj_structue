@@ -1,0 +1,14 @@
+structure of text object
+{
+owner : id
+imported : date 
+accessed : []
+   [date]
+
+text: []
+  [id
+   token
+   html
+   access []
+   [{date, function}]
+  ]
